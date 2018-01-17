@@ -1,21 +1,21 @@
 
 
 
- 
-      
-      <h1>Start your search!</h1>
-    	<%= form_tag welcome_search_path, method: :get do %>
 
-      <%= text_field_tag :q %>
-      
-      <%= text_field_tag :lat, nil, placeholder: "Lat" %>
+<h1>Start your search!</h1>
 
-      <%= text_field_tag :lon, nil, placeholder: "Lon" %>
+  <%= form_tag welcome_index_path, method: :get do %>
+
+  <%= text_field_tag :q, nil, placeholder: "Query" %> 
+      
+  <%= text_field_tag :lat, nil, placeholder: "Lat" %>
+
+  <%= text_field_tag :lon, nil, placeholder: "Lon" %>
   
-      <%= text_field_tag :distance, nil, placeholder: "Search Radius" %>
-      <%= submit_tag 'Lookup', class: 'btn btn-default' %>
-     <% end %>
-
+  <%= text_field_tag :distance, nil, placeholder: "Search Radius" %>
+  <%= submit_tag 'Lookup', class: 'btn btn-default' %>
+     
+  <% end %>
 
      
     
