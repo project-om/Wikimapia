@@ -6,12 +6,18 @@
         <div class="col-md-7">
 	  <p><em>Points of interest around your query?</em></p>
         <p>
-	    <%= @results[:query] %> 
-	    </p>
+	  <%= params[:query] %> 
+	</p>
 	    <p><em> Distance from your query?</em></p>
 	    <p>
-	    <%= @results[:distance] %> 
+	    <%= params[:distance] %> 
 	    </p>
+
+	    <ul>
+	      <% @response['places'].each do |place| %>
+	      <li> <%= link_to place['title'], place['url'] %>
+	      <% end %>
+	    </ul>
         </div>
       </div>
 
