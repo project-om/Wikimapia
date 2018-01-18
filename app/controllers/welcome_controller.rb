@@ -8,11 +8,7 @@ class WelcomeController < ApplicationController
       request_params = {:format => "json", :key => ENV["wikimapia_api_key"], :function => "place.getnearest" }
   
       request_params.merge!(search_params)
-      @response = HTTParty.get base_url, query: request_params 
-
-      @results = {}
-      @results[:query] = response['name']
-      @results[:distance] = response['meters']
+      @response = HTTParty.get base_url, query: request_params
   end
 
   #def test
